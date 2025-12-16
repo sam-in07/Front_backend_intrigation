@@ -31,3 +31,11 @@ function showUserData(users) {
     document.getElementById("users-table").appendChild(tr);
   }
 }
+
+document.getElementById("btn-createUser").addEventListener("click", () => {
+  const name = document.getElementById("inp-name").ariaValueMax;
+  const job = document.getElementById("inp-job").ariaValueMax;
+  const country = document.getElementById("inp-country").ariaValueMax;
+  const color = document.getElementById("inp-color").ariaValueMax;
+  console.log(name, job);
+});

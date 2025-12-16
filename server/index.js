@@ -10,14 +10,18 @@ let users = [
 ]
 
 
-app.get('/hellw', (req, res) => {
-  res.send('Hello World!');
-});
+
 
 
 app.get('/users', (req, res) => {
   res.send(users);
 });
+
+app.post('/users', (req, res) => {
+    const newUser = req.body;
+    console.log(newUser);
+});
+
 
 app.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
