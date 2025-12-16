@@ -32,10 +32,24 @@ function showUserData(users) {
   }
 }
 
-document.getElementById("btn-createUser").addEventListener("click", () => {
-  const name = document.getElementById("inp-name").ariaValueMax;
-  const job = document.getElementById("inp-job").ariaValueMax;
-  const country = document.getElementById("inp-country").ariaValueMax;
-  const color = document.getElementById("inp-color").ariaValueMax;
-  console.log(name, job);
+document.getElementById("btn-createuser").addEventListener("click", () => {
+  const name = document.getElementById("inp-name").value;
+  const job = document.getElementById("inp-job").value;
+  const country = document.getElementById("inp-country").value;
+  const color = document.getElementById("inp-color").value;
+  const newUser = {
+    name: name,
+    job: job,
+    country: country,
+    color: color,
+  };
+  fetch("http://localhost:3000/users", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(newUser),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
 });
