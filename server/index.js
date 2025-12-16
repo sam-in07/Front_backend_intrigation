@@ -1,5 +1,8 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+
+app.use(cors());
 
 let users = [
     { id: 1, name: "Alice", country: "USA" , Job : "Engineer" , favouriteColor : "Blue" , image_url : "https://avatar.iran.liara.run/public/43" }, 
